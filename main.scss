@@ -63,11 +63,10 @@ body {
 }
    
 .person:hover .extra {
-  position: fixed;   
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: center;
   margin-top: 10px;
+  font-weight: 500;
 }
    
 
