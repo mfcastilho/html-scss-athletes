@@ -1,1 +1,133 @@
+$primary-color: #007bff;
+$secondary-color: #ffc107;
+$font-family: Arial, sans-serif;
 
+
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+.people {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+     gap: 40px 30px;
+     padding: 30px 35px;
+     justify-content: center;
+   
+     .person {
+       max-width: 200px;
+       width: 100%;
+     }
+   
+     @media screen and (max-width: 499px) {
+       min-width: 500px; 
+       grid-template-columns: repeat(2, 200px);
+     }
+   
+     @media screen and (min-width: 500px) {
+          min-width: 500px; 
+       grid-template-columns: repeat(2, 200px); 
+     }
+   
+     @media screen and (min-width: 1000px) {
+       grid-template-columns: repeat(4, 200px);
+     }
+   }
+   
+
+.person {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  padding: 10px 10px 9px 10px;
+  overflow: hidden;
+}
+
+.person:hover {
+     background-color: #EEEEEE;
+     border-radius: 60px;
+
+}
+
+.photo:hover img {
+     width: calc(200px * 1.2);
+     height: calc(200px * 1.2);
+     border-radius: 60px;
+}
+.person .extra {
+     display: none;
+}
+   
+.person:hover .extra {
+  position: fixed;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+   
+
+.photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 200px;
+  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+}
+
+
+   
+
+.rank {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  color: #8b0000;
+  text-align: center;
+  line-height: 32px;
+  padding: 4px;
+  border-radius: 32px;
+}
+
+.details {
+  padding: 10px;
+  color: #000;
+}
+
+.name {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.name:hover {
+  color: $secondary-color;
+}
+
+// .extra {
+// //    display: none;  
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-top: 10px;
+// }
+
+.sport,
+.pay {
+  font-size: 14px;
+  color:#666;
+}
