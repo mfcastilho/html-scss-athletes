@@ -42,6 +42,7 @@ body {
   padding: 10px 10px 9px 10px;
   overflow: hidden;
   transition: transform 1s;
+  cursor: pointer;
 
   &__photo{
     position: relative;
@@ -64,7 +65,7 @@ body {
     height: 200px;
 
     display: block;
-    border-radius: 200px;
+    border-radius: 50%;
 
     transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
   }
@@ -110,7 +111,7 @@ body {
   text-align: center;
   line-height: 32px;
   padding: 4px;
-  border-radius: 32px;
+  border-radius: 50%;
 }
 
 .details {
