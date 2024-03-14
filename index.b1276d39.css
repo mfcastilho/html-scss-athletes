@@ -12,9 +12,8 @@ body {
   display: grid;
 }
 
-.people .person {
-  width: 100%;
-  max-width: 200px;
+.people__person {
+  position: relative;
 }
 
 @media screen and (width <= 499px) {
@@ -27,7 +26,6 @@ body {
 @media screen and (width >= 500px) {
   .people {
     grid-template-columns: repeat(2, 200px);
-    min-width: 500px;
   }
 }
 
@@ -41,46 +39,55 @@ body {
   color: #000;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 200px;
   padding: 10px 10px 9px;
+  transition: transform 1s;
   display: flex;
-  position: relative;
   overflow: hidden;
+}
+
+.person__photo {
+  position: relative;
 }
 
 .person:hover {
+  z-index: 1;
   background-color: #eee;
-  border-radius: 60px;
-}
-
-.photo:hover img {
-  border-radius: 60px;
-  width: 240px;
-  height: 240px;
-}
-
-.person .extra {
-  display: none;
-}
-
-.person:hover .extra {
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  display: flex;
-  position: fixed;
-}
-
-.photo {
+  border-radius: 12px;
+  max-width: 264px;
+  transition: all 1s;
   position: relative;
-  overflow: hidden;
+  transform: scale(1.23);
 }
 
-.photo img {
+.photo__img {
   border-radius: 200px;
   width: 200px;
   height: 200px;
-  transition: width .3s, height .3s, border-radius .3s;
+  transition: all 2s;
   display: block;
+}
+
+.photo_rank {
+  position: absolute;
+}
+
+.photo__rank {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.person:hover .photo__img {
+  border-radius: 60px;
+  transition: all 1s;
+  transform: scale(1.03);
+}
+
+.person:not(:hover) .photo__img {
+  transition: all 2s;
 }
 
 .rank {
@@ -92,30 +99,40 @@ body {
   height: 32px;
   padding: 4px;
   line-height: 32px;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
 }
 
 .details {
   color: #000;
-  padding: 10px;
 }
 
 .name {
-  color: #000;
+  color: #2f4f4f;
+  cursor: pointer;
+  justify-content: center;
+  padding: 9.6px 0 10.8px;
   font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
   text-decoration: none;
-  transition: color .3s;
+  display: flex;
 }
 
-.name:hover {
-  color: #ffc107;
+.extra {
+  color: #000;
+  opacity: 0;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 1s;
+  display: flex;
+}
+
+.person:hover .extra {
+  opacity: 1;
+  transition: all 1s;
 }
 
 .sport, .pay {
-  color: #666;
+  color: #000;
   font-size: 14px;
 }
 /*# sourceMappingURL=index.b1276d39.css.map */
