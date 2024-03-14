@@ -1,5 +1,3 @@
-$primary-color: #007bff;
-$secondary-color: #ffc107;
 $font-family: Arial, sans-serif;
 
 
@@ -20,31 +18,6 @@ body {
     position: relative;
   }
    
-  .person {
-    max-width: 200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #000;
-    padding: 10px 10px 9px 10px;
-    overflow: hidden;
-
-    transition: 1s all;
-
-    &__photo{
-      position: relative;
-    }
-
-    &:hover {
-      position: relative;
-      background-color: #EEEEEE;
-      border-radius: 12px;
-      transform: scale(1.23);
-      z-index: 1;
-    }
-  }
-   
   @media screen and (max-width: 499px) {
     min-width: 500px; 
     grid-template-columns: repeat(2, 200px);
@@ -59,41 +32,77 @@ body {
   }
 }
 
-.photo__img {
-  transition: all 2s;
-}
+.person {
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  padding: 10px 10px 9px 10px;
+  overflow: hidden;
+  transition: transform 1s;
 
-.person:hover .photo__img {
-  transition: all 1s;
-  transform: scale(1.03);
-  border-radius: 60px;
-}
+  &__photo{
+    position: relative;
+  }
 
-.extra {
-  margin-top: 10px;
-  font-weight: 500;
-  display: none;
+  &:hover {
+    max-width: 264px;
+    transition: 1s all;
+    position: relative;
+    background-color: #EEEEEE;
+    border-radius: 12px;
+    transform: scale(1.23);
+    z-index: 1;
+  }
 }
-   
-
 
 .photo {
   &__img {
     width: 200px;
     height: 200px;
+
     display: block;
     border-radius: 200px;
+
     transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+  }
+
+  &__img {
+    width: 200px;
+    height: 200px;
+
+    display: block;
+    border-radius: 200px;
+
+    transition: all 2s;
+  }
+
+  &_rank {
+    position: absolute;
+  }
+
+  &__rank {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
   }
 }
 
+.person:hover .photo__img {
+  transition: all 1s;
+  transform: scale(1.03);
 
+  border-radius: 60px;
+}
+
+.person:not(:hover) .photo__img {
+  transition: all 2s;
+}
 
 .rank {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
   width: 32px;
   height: 32px;
   background-color: white;
@@ -104,25 +113,39 @@ body {
   border-radius: 32px;
 }
 
-
 .details {
   padding: 10px 0;
   color: #000;
 }
 
 .name {
+  display: flex;
+  justify-content: center;
   font-size: 18px;
-  color: #000;
+  line-height: 23px;
+  font-weight: 600;
+  color: #2F4F4F;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-.name:hover {
-  color: $secondary-color;
+
+.extra {
+  color: #000;
+  display: flex;
+  justify-content: center;
+  margin-top: 9px;
+  font-weight: 500;
+  transition: all 1s;
+  opacity: 0;
+}
+
+.person:hover .extra {
+  transition: all 1s;
+  opacity: 1;
 }
 
 .sport,
 .pay {
   font-size: 14px;
-  color:#666;
+  color:#000;
 }
